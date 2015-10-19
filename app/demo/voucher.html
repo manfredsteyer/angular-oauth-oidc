@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h1 ng-show="!userService.userName">Buy a Voucher!</h1>
+    <h1 ng-show="userService.userName">Buy a Voucher, {{userService.userName}}!</h1>
+
+    
+    <div ng-show="model.message" style="margin-top:20px; margin-bottom:20px;">
+        <span style="background-color:LightSteelBlue; padding:10px; font-weight:bold">{{ model.message }}</span>
+    </div>
+
+    <div style="margin-top:20px; margin-bottom:20px;">
+        <input type="button" value="Buy Voucher!" ng-click="model.buyVoucher()" class="btn" />
+    </div>
+
+<!--
+    <p>
+        Token: {{ oauth.getAccessToken() }}
+    </p>
+
+    <p>
+        <input type="button" class="btn" value="Refresh" ng-click="refresh()" />
+    </p>
+-->
+</div>

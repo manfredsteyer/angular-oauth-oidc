@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OAuth-Demo</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+        body {
+            margin-top:60px;
+        }
+
+    </style>
+</head>
+<body ng-app="demo">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="voucher">Voucher</a></li>
+                <li><a ui-sref="login">Login</a></li>
+                <li><a ui-sref="logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div ui-view></div>
+
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="bower_components/angular-base64/angular-base64.min.js"></script>
+    
+    <script src="node_modules/sha256/node_modules/convert-hex/convert-hex.js"></script>
+    <script src="node_modules/sha256/node_modules/convert-string/convert-string.js"></script>
+    <script src="node_modules/sha256/lib/sha256.js"></script>
+    
+    <script src="app/components/oauth/oauth.js"></script>
+    <script src="app/components/oauth/oauth-service.js"></script>
+    <script src="app/components/oauth/oauth-directives.js"></script>
+
+    <script src="app/demo/app.js"></script>
+
+
+</body>
+</html>

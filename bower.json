@@ -1,0 +1,13 @@
+{
+  "name": "AnguarJS-with-OAuth2-Demo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/manfredsteyer/AnguarJS-with-OAuth2",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
