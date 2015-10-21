@@ -42,7 +42,8 @@ app.constant("config", {
 app.constant("config", { 
     apiUrl: "https://steyer-api.azurewebsites.net",
     loginUrl: "https://steyer-identity-server.azurewebsites.net/identity/connect/authorize",
-    issuerUri: "https://steyer-identity-server.azurewebsites.net/identity"
+    issuerUri: "https://steyer-identity-server.azurewebsites.net/identity",
+    validationUrl: "https://steyer-identity-server.azurewebsites.net/identity/connect/identitytokenvalidation"
 });
 
 app.run(function (oauthService, $http, userService, config) {
@@ -59,7 +60,11 @@ app.run(function (oauthService, $http, userService, config) {
         onTokenReceived: function(context) {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + context.accessToken;
             userService.userName = context.idClaims['given_name'];
-        }
+        }/*,
+        validationHandler: function(context) {
+            var params = {token: context.idToken, client_id: oauthService.clientId};
+            return $http.get(config.validationUrl, { params: params});
+        }*/
     });
 
 });

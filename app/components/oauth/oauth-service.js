@@ -184,9 +184,16 @@ var oauth2 = oauth2 || {};
                 var now = Date.now();
                 var issuedAtMSec = claims.iat * 1000;
                 var expiresAtMSec = claims.exp * 1000;
+                
+                var tenMinutesInMsec = 1000 * 60 * 10;
 
-                if (issuedAtMSec > now || expiresAtMSec < now) {
+                if (issuedAtMSec - tenMinutesInMsec >= now  || expiresAtMSec + tenMinutesInMsec <= now) {
                     $log.warn("Token has been expired");
+                    $log.warn({
+                       now: now,
+                       issuedAtMSec: issuedAtMSec,
+                       expiresAtMSec: expiresAtMSec
+                    });
                     return false;
                 }
 
@@ -331,19 +338,23 @@ var oauth2 = oauth2 || {};
 
         this.createNonce = function () {
             
-            return $http
-                    .get(this.rngUrl)
-                    .then(function (result) {
-                        return result.data;
-                    });
+            if (this.rngUrl) {
+                return $http
+                        .get(this.rngUrl)
+                        .then(function (result) {
+                            return result.data;
+                        });
+            }
+            else {
+                var text = "";
+                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-            //var text = "";
-            //var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                for (var i = 0; i < 40; i++)
+                   text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-            //for (var i = 0; i < 20; i++)
-            //    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-            //return text;
+                return $q.when(text);
+                
+            }
         };
 
         this.getFragment = function () {
