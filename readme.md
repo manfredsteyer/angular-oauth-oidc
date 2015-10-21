@@ -14,7 +14,7 @@ You'll find the reusable oauthService within the folder ``components/oauth``.
 
 ## Configuration
 
-Just configure oauthService and call setup to let it hook into UI-Router. Users that require to log in are redirected to the mentioned ``loginState`` and after logging in and receiving a token, onTokenReceived is called. There you can grab the requested token.
+Just configure ``oauthService`` and call setup to let it hook into UI-Router. Users that require to log in are redirected to the mentioned ``loginState`` and after logging in and receiving a token, ``onTokenReceived`` is called. There you can grab the requested token.
 
 ```
 app.constant("config", { 
@@ -43,7 +43,7 @@ app.run(function (oauthService, $http, userService, config) {
 });
 ```
 
-UI-Router-Route that needs a logged-in user can be marked with restricted:true. This is just about user experience and not about security. Security is done by validating the token at server-side.
+UI-Router-Route that needs a logged-in user can be marked with ``restricted: true``. This is just about user experience and not about security. Security is done by validating the token at server-side.
 
 ```
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -118,7 +118,7 @@ To directly redirect the user to the Authorization-Server, you can call ``initIm
 oauthService.initImplicitFlow(optionalState);
 ```
 
-There is also an oauthLoginButton-Directive you could use to create a login-button:
+There is also an ``oauthLoginButton``-Directive you could use to create a login-button, that redirects the user to the Authorization-Server:
 
 ```
 <input 
