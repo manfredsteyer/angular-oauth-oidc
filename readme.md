@@ -76,7 +76,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
 ## More Configuration-Options
 
-You can also register the URL of an web-api that creates a random string when called via GET. This is to create a nonce-using preventing some attacks. Otherwise it uses some simple java-script-fallback for this. In addition to this, you could use the ``validationHandler``-callback to validate the received tokens. The next sample uses this to send the token to a service that checks the signature of it. The validationHandler should retour a promise that informs about the validity of the token by it's state.  
+You can also register the URL of an web-api that creates a random string when called via GET. This is to create a nonce-using preventing some attacks. Otherwise it uses some simple java-script-fallback for this. In addition to this, you could use the ``validationHandler``-callback to validate the received tokens. The next sample uses this to send the token to a service that checks the signature of it. The ``validationHandler`` should return a promise that informs about the validity of the token by it's state.  
 
 ```
 app.run(function (oauthService, $http, userService, config) {
