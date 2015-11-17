@@ -5,7 +5,7 @@
 - sha256
 - angular-ui-router
 
-Have a look at the included scripts at the end of the (https://github.com/manfredsteyer/angular-oauth-oidc/blob/master/index.html)[index.html].
+Have a look at the included scripts at the end of the [https://github.com/manfredsteyer/angular-oauth-oidc/blob/master/index.html](index.html).
 
 ## Authorization-Server
 The provided sample uses a hosted version of IdentityServer3 (https://github.com/IdentityServer/IdentityServer3), but it is aimed to work also with other OAuth2/OIDC-Authorization-Servers. You can **login with any Facebook-Account or with max/geheim**.
