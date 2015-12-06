@@ -1,5 +1,10 @@
 # AngularJS with OAuth2 and OpenId Connect Implicit Flow Sample
 
+## Library 
+
+This Sample has evolved to a simple lib that can be installed via npm.
+Please see: https://github.com/manfredsteyer/angular-oidc-lib
+
 ## Dependencies
 - angular-base64
 - sha256
