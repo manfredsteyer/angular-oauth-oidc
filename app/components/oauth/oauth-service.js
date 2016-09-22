@@ -2,6 +2,7 @@ var oauth2 = oauth2 || {};
 
 (function (namespace) {
 
+		OAuthService.$inject = [ "$document", "$timeout", "$q", "$location", "$http", "$log", "$state", "$rootScope", "$base64" ];
     function OAuthService($document, $timeout, $q, $location, $http, $log, $state, $rootScope, $base64) {
 
         var that = this;
