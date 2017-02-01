@@ -42,7 +42,8 @@ app.constant("config", {
 app.constant("config", { 
     apiUrl: "https://steyer-api.azurewebsites.net",
     loginUrl: "https://steyer-identity-server.azurewebsites.net/identity/connect/authorize",
-    issuerUri: "https://steyer-identity-server.azurewebsites.net/identity"
+    issuerUri: "https://steyer-identity-server.azurewebsites.net/identity",
+    validationUrl: "https://steyer-identity-server.azurewebsites.net/identity/connect/identitytokenvalidation"
 });
 
 app.run(function (oauthService, $http, userService, config) {
